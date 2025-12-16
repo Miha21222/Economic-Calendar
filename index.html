@@ -8,11 +8,40 @@
     <style>
         html, body {
             width: 100%;
-            height: 100%;
+            min-height: 100%;
             margin: 0;
             padding: 0;
             background: #1e1e1e; /* чтобы не было белых полей */
-            overflow: hidden;
+            overflow-y: auto; /* позволяем странице скроллиться при необходимости */
+        }
+
+        /* темный скроллбар для всей страницы и вложенных областей с overflow */
+        :root {
+            color-scheme: dark;
+        }
+
+        *,
+        *::before,
+        *::after {
+            scrollbar-width: thin;
+            scrollbar-color: #4a4a4a #111111;
+        }
+
+        *::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        *::-webkit-scrollbar-track {
+            background: #111111;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background: #4a4a4a;
+            border-radius: 4px;
+        }
+
+        *::-webkit-scrollbar-thumb:hover {
+            background: #6b6b6b;
         }
 
         #economic-calendar-980776 {
